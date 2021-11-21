@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/assignment-2-itspategan/static/css/main.1c3c8458.chunk.css",
+    "main.js": "/assignment-2-itspategan/static/js/main.a4a77e8e.chunk.js",
+    "main.js.map": "/assignment-2-itspategan/static/js/main.a4a77e8e.chunk.js.map",
+    "runtime-main.js": "/assignment-2-itspategan/static/js/runtime-main.72bc035b.js",
+    "runtime-main.js.map": "/assignment-2-itspategan/static/js/runtime-main.72bc035b.js.map",
+    "static/js/2.a7dc6078.chunk.js": "/assignment-2-itspategan/static/js/2.a7dc6078.chunk.js",
+    "static/js/2.a7dc6078.chunk.js.map": "/assignment-2-itspategan/static/js/2.a7dc6078.chunk.js.map",
+    "index.html": "/assignment-2-itspategan/index.html",
+    "static/css/main.1c3c8458.chunk.css.map": "/assignment-2-itspategan/static/css/main.1c3c8458.chunk.css.map",
+    "static/js/2.a7dc6078.chunk.js.LICENSE.txt": "/assignment-2-itspategan/static/js/2.a7dc6078.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72bc035b.js",
+    "static/js/2.a7dc6078.chunk.js",
+    "static/css/main.1c3c8458.chunk.css",
+    "static/js/main.a4a77e8e.chunk.js"
+  ]
+}
