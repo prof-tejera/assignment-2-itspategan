@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import DisplayTime from "../generic/DisplayTime";
-import ControlButton from "../generic/ControlButton";
-import Input from "../generic/Input";
-import SimpleText from "../generic/SimpleText";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import DisplayTime from '../generic/DisplayTime';
+import ControlButton from '../generic/ControlButton';
+import Input from '../generic/Input';
+import SimpleText from '../generic/SimpleText';
 
 const Container = styled.div`
   height: 90%;
@@ -14,20 +14,59 @@ const Container = styled.div`
   text-align: center;
 `;
 
-class Stopwatch extends React.Component {
-  render() {
-    return (
-      <Container>
-        <DisplayTime></DisplayTime>
-        <div>
-          <ControlButton value={"start"} />
-          <ControlButton value={"pause"} />
-        </div>
-        <SimpleText value={"SET TIME"} />
-        <Input />
-      </Container>
-    );
-  }
-}
+const Countdown = () => {
+  const [isActive, setIsActive] = useState(false);
+  const [isPaused, setIsPaused] = useState(true);
+  const [time, setTime] = useState(10000);
+  const [startTime, setStartTime] = useState();
 
-export default Stopwatch;
+  React.useEffect(() => {
+    let interval = null;
+
+    // if not paused, decrement
+    if (isActive && isPaused === false && time > 0) {
+      interval = setInterval(() => {
+        setTime((time) => time - 10);
+      });
+    } else {
+      clearInterval(interval);
+    }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isActive, isPaused]);
+
+  // handlers
+  const handleStart = () => {
+    setIsActive(true);
+    setIsPaused(false);
+  };
+
+  const handlePause = () => {
+    setIsPaused(!isPaused);
+  };
+
+  const handleReset = () => {
+    setIsActive(false);
+    setTime(0);
+  };
+
+  return (
+    <Container>
+      <DisplayTime time={time} />
+      <div>
+        <ControlButton
+          active={isActive}
+          isPaused={isPaused}
+          handleStart={handleStart}
+          handlePause={handlePause}
+          handleReset={handleReset}
+        />
+      </div>
+      <SimpleText value={'SET TIME'} />
+      <Input />
+    </Container>
+  );
+};
+
+export default Countdown;
