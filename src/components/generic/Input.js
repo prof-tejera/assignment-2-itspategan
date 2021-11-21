@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const TextInput = styled.input`
   width: 100px;
@@ -11,14 +11,12 @@ const TextInput = styled.input`
   font-size: 40px;
 `;
 
-class Input extends Component {
-  render() {
-    return (
-      <div>
-        <TextInput />
-      </div>
-    );
-  }
-}
+const Input = () => {
+  return (
+    <div>
+      <TextInput />
+    </div>
+  );
+};
 
 export default Input;
