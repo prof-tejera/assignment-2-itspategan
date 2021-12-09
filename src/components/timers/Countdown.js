@@ -18,7 +18,7 @@ const Countdown = () => {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
   const [time, setTime] = useState(10000);
-  // const [startTime, setStartTime] = useState();
+  const [startTime, setStartTime] = useState();
 
   React.useEffect(() => {
     let interval = null;
@@ -34,7 +34,7 @@ const Countdown = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [isActive, isPaused, time]);
+  }, [isActive, isPaused]);
 
   // handlers
   const handleStart = () => {
