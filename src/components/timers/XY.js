@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import DisplayTime from '../generic/DisplayTime';
-import ControlButton from '../generic/ControlButton';
-import Input from '../generic/Input';
-import SimpleText from '../generic/SimpleText';
-import DisplayRounds from '../generic/DisplayRounds';
+import React from "react";
+import styled from "styled-components";
+import DisplayTime from "../generic/DisplayTime";
+import ControlButton from "../generic/ControlButton";
+import Input from "../generic/Input";
+import SimpleText from "../generic/SimpleText";
+import DisplayRounds from "../generic/DisplayRounds";
 
 const Container = styled.div`
   height: 90%;
@@ -15,23 +15,25 @@ const Container = styled.div`
   text-align: center;
 `;
 
-const Stopwatch = (props) => {
-  return (
-    <Container>
-      <DisplayTime></DisplayTime>
-      <div>
-        <ControlButton value={'start'} />
-        <ControlButton value={'pause'} />
-      </div>
-      <DisplayRounds value='0'></DisplayRounds>
-      <div>
-        <SimpleText value={'ROUNDS'} />
-        <Input />
-        <SimpleText value={'TIME'} />
-        <Input />
-      </div>
-    </Container>
-  );
-};
+class Stopwatch extends React.Component {
+  render() {
+    return (
+      <Container>
+        <DisplayTime></DisplayTime>
+        <div>
+          <ControlButton value={"start"} />
+          <ControlButton value={"pause"} />
+        </div>
+        <DisplayRounds value="0"></DisplayRounds>
+        <div>
+          <SimpleText value={"ROUNDS"} />
+          <Input />
+          <SimpleText value={"TIME"} />
+          <Input />
+        </div>
+      </Container>
+    );
+  }
+}
 
 export default Stopwatch;
